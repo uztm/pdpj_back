@@ -1,4 +1,21 @@
-Django>=4.2
+# Django Core
+Django>=5.1
 djangorestframework>=3.14
-django-cors-headers>=4.0
-Pillow>=9.0
+
+# Admin UI
+django-unfold>=0.27.0
+
+# CORS & Security
+django-cors-headers>=4.3
+
+# Media & Images
+Pillow>=10.0
+
+# Import/Export
+django-import-export>=3.3
+
+# Filtering
+django-filter>=23.3
+
+# Additional Utilities
+python-decouple>=3.8
