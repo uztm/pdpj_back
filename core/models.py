@@ -70,6 +70,19 @@ class News(models.Model):
         return self.title
 
 
+def month_hero_image_path(instance, filename):
+    """Generate custom path for month hero images."""
+    from datetime import datetime
+    import os
+
+    # Get file extension
+    ext = os.path.splitext(filename)[1]
+    # Format: users/YYYYMMDD_username.ext
+    date_str = datetime.now().strftime('%Y%m%d')
+    new_filename = f"{date_str}_{instance.user.username}{ext}"
+    return f'users/{new_filename}'
+
+
 class MonthHero(models.Model):
     """
     Represents a 'Hero of the Month' — either a student or a teacher
@@ -83,6 +96,7 @@ class MonthHero(models.Model):
     month = models.ForeignKey(Month, on_delete=models.CASCADE, related_name='heroes')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='month_heroes')
     type = models.CharField(max_length=20, choices=HERO_TYPE_CHOICES)
+    image = models.ImageField(upload_to=month_hero_image_path, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
