@@ -18,7 +18,14 @@ SECRET_KEY = 'django-insecure-5==2xp941gcg-p+indhieqs29ap+e74flr=3ws)eirw&k0mix%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['api.pdpjunior.uz', 'www.api.pdpjunior.uz', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'api.pdpjunior.uz',
+    'www.api.pdpjunior.uz',
+    'localhost',
+    '127.0.0.1',
+    '94.158.49.59',
+]
+
 
 CSRF_TRUSTED_ORIGINS = [
     'https://api.pdpjunior.uz',
