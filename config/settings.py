@@ -155,7 +155,7 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 # Media files (User uploaded files)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
+# git check
 # CORS settings
 CORS_ALLOW_ALL_ORIGINS = True
 
